@@ -1,0 +1,228 @@
+*,
+*::after,
+*::before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+:root {
+	--cell-size: 100px;
+}
+
+body {
+	font-family: "Arial", 'sans-serif';
+	background: cadetblue;
+	margin: 0;
+}
+
+h2 {
+	background-color: red;
+	background-image: linear-gradient(#00098a, #940707);
+	background-size: 100%;
+	background-repeat: repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	text-align: center;
+	margin: 0
+}
+
+#gameContainer {
+	min-height: 100vh;
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 0;
+	gap: 1em;
+}
+
+#scores,
+.btns {
+	display: flex;
+	gap: 1em;
+}
+
+.cellContainer {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-template-rows: repeat(3, auto);
+	box-shadow: 0 0 0 1.5px;
+}
+
+.cell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: var(--cell-size);
+	height: var(--cell-size);
+	box-shadow: inset 0 0 0 1.5px;
+	cursor: pointer;
+	transition: transform 0.2s;
+	position: relative;
+}
+
+.cellContainer:not(.X):not(.O) .cell:not(.X):not(.O),
+.cellContainer:has(.win) .cell {
+	cursor: initial;
+}
+
+.cellContainer.draw .cell {
+	background-color: yellow;
+	cursor: initial;
+}
+
+.win {
+	background-color: green;
+}
+
+.cell.X,
+.cell.O {
+	cursor: not-allowed;
+}
+
+svg {
+	display: none;
+	width: var(--cell-size);
+	height: var(--cell-size);
+}
+
+.line {
+	transform-origin: center;
+}
+
+.line.--1 {
+	rotate: 45deg;
+}
+
+.line.--2 {
+	rotate: -45deg;
+}
+
+.cell.X .cross,
+.cell.O .circle {
+	display: inline;
+}
+
+#restartBtn {
+	--bg-color: hsl(221, 50%, 35%);
+	--bg-a-color: hsl(221, 50%, 25%);
+}
+
+.easy {
+	--bg-color: hsl(9, 50%, 35%);
+	--bg-a-color: hsl(9, 50%, 25%);
+}
+
+.hard {
+	--bg-color: hsl(100, 50%, 35%);
+	--bg-a-color: hsl(100, 50%, 25%);
+}
+
+button {
+	font-size: 20px;
+	background-color: var(--bg-color);
+	border-radius: .15em;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: none;
+	outline: none;
+	box-shadow: 0 0 0 0.15em #000;
+	transition: transform 0.2s;
+	color: white;
+}
+
+button:active {
+	background-color: var(--bg-a-color);
+}
+
+@media (hover: hover) {
+
+	.cellContainer.X .cell:not(.X):not(.O):hover .cross,
+	.cellContainer.O .cell:not(.X):not(.O):hover .circle {
+		display: inline;
+		opacity: 0.5;
+	}
+
+	button:hover {
+		transform: translateY(-10%);
+	}
+}
+
+noscript {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	background-color: #fff;
+	font-family: sans-serif;
+	cursor: default;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+noscript .noScriptError {
+	display: inline;
+	width: 100%;
+	max-width: 10em;
+	height: 100%;
+	max-height: 10em;
+}
+
+body:has(noscript .noScriptError)>*:not(noscript) {
+	pointer-events: none;
+	display: none;
+}
+
+.noScript {
+	transform-origin: center;
+	rotate: y 90deg;
+	animation: noScriptAnimation 2s ease-in infinite alternate;
+}
+
+.noScript1 {
+	--rotation-1: 60deg;
+	--rotation-2: 45deg;
+}
+
+.noScript2 {
+	--rotation-1: -60deg;
+	--rotation-2: -45deg;
+}
+
+@keyframes noScriptAnimation {
+
+	27.5% {
+		rotate: y 90deg;
+	}
+
+	45% {
+		rotate: 0deg;
+	}
+
+	53.75% {
+		rotate: var(--rotation-1);
+	}
+
+	65% {
+		rotate: var(--rotation-2);
+	}
+
+	100% {
+		rotate: var(--rotation-2);
+	}
+}

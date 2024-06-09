@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-O Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="gameContainer">
+        <h2>Ai: Try to defeat me!</h2>
+        <div id="scores">
+            <h2 id="mode">Mode: Easy</h2>
+            <h2 id="ai">Ai: 0</h2>
+            <h2 id="human">You: 0</h2>
+        </div>
+
+        <div class="cellContainer">
+            <div class="cell" cellindex="0">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="1">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="2">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="3">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="4">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="5">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="6">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="7">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+            <div class="cell" cellindex="8">
+                <svg class="cross">
+                    <use href="#cross" />
+                </svg>
+                <svg class="circle">
+                    <use href="#circle" />
+                </svg>
+            </div>
+        </div>
+        <h2 id="statusText"></h2>
+        <div class="btns">
+            <button id="restartBtn"></button>
+            <button class="mode easy">Hard Mode</button>
+        </div>
+    </div>
+    <svg>
+        <symbol id="cross" viewBox="0 0 100 100" fill="none">
+            <path class="line --1" d="M10 50h80" stroke-width="7" stroke="red" stroke-linecap="round" />
+            <path class="line --2" d="M10 50h80" stroke-width="7" stroke="red" stroke-linecap="round" />
+        </symbol>
+        <symbol id="circle" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="35" stroke-width="7" stroke="blue"></circle>
+        </symbol>
+    </svg>
+    <noscript>
+        <svg class="noScriptError" viewBox="0 0 16 16" fill="none">
+            <path class="noScript noScript1" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <path class="noScript noScript2" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <circle cx="8" cy="8" r="7.5" stroke="#ff0000" />
+        </svg>
+        <h1>Javascript must be enabled</h1>
+    </noscript>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Validation App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <form id="card_form">
+
+        <h3>credit card validation</h3>
+        <div>
+            <span>accepted cards :</span>
+            <img src="card_img.png">
+        </div>
+        <div>
+            <label for="card_input">credit card number :</label>
+            <input type="text" id="card_input" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16"
+                autocomplete='off' autocapitalize='false' autocorrect="false" aria-autocomplete="none" />
+        </div>
+
+        <button>validate card</button>
+
+    </form>
+    <dialog id="alertDialog">
+        <div class="alertContainer">
+            <svg class="success">
+                <use href="#success" />
+            </svg>
+            <svg class="error">
+                <use href="#error" />
+            </svg>
+            <h2 id="alertTitle"></h2>
+        </div>
+        <button class="dialogBtn" id="closeModal">OK</button>
+    </dialog>
+    <svg>
+        <symbol id="success" viewBox="0 0 75 75" fill="none">
+            <path class="line" d="M18 43l11 11.5l23 -33.5" stroke="#008000" stroke-width="5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <circle cx="37.5" cy="37.5" r="35" stroke="#008000" stroke-width="5" />
+        </symbol>
+        <symbol id="error" viewBox="0 0 16 16" fill="none">
+            <path class="cross --1" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <path class="cross --2" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <circle cx="8" cy="8" r="7.5" stroke="#ff0000" />
+        </symbol>
+    </svg>
+    <noscript>
+        <svg class="noScriptError" viewBox="0 0 16 16" fill="none">
+            <path class="noScript noScript1" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <path class="noScript noScript2" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <circle cx="8" cy="8" r="7.5" stroke="#ff0000" />
+        </svg>
+        <h1>Javascript must be enabled</h1>
+    </noscript>
+</body>
+
+</html>

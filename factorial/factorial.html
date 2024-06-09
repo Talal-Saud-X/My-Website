@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <link rel="stylesheet" href="factorial.css">
+    <script src="factorial.js" defer></script>
+</head>
+
+<body>
+    <h1 class="h1">Factorial Calculator</h1>
+    <div class="container">
+        <div class="message"></div>
+        <form id="form">
+            <div class="input">
+                <input type="text" maxlength="3" name="input" id="input" autocomplete="off"
+                    placeholder="Enter a Number to Calculate (170 Max)">
+                <button id="submit">Submit</button>
+                <button type="button" id="clear">Clear</button>
+            </div>
+        </form>
+        <div class="result"></div>
+    </div>
+    <noscript>
+        <svg class="noScriptError" viewBox="0 0 16 16" fill="none">
+            <path class="noScript noScript1" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <path class="noScript noScript2" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <circle cx="8" cy="8" r="7.5" stroke="#ff0000" />
+        </svg>
+        <h1>Javascript must be enabled</h1>
+    </noscript>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project Management App</title>
+	<link rel="shortcut icon" href="./imgs/favicon.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1 class="h1">Project Management App</h1>
+		</header>
+		<div class="form_container">
+			<h2 id="day">Hi, Happy </h2>
+			<form class="form" id="project-form">
+				<input type="text" autocomplete="off" maxlength="50" autocapitalize="off" class="input"
+					id="project-input" name="project-input" placeholder="Add Your Projects Here.">
+				<button type="submit" class="btn submit" name="project-submit">Add Project</button>
+			</form>
+		</div>
+		<div class="search_container">
+			<h2>Projects</h2>
+			<div class="search">
+				<input type="search" class="search__input" name="Search" aria-label="search"
+					placeholder="Search for projects." id="projects_search">
+				<svg>
+					<use href="#search_icon" />
+				</svg>
+			</div>
+		</div>
+		<div class="section" id="projects"></div>
+	</div>
+
+	<template id="projects-temp">
+		<div class="project">
+			<div class="details">
+				<div class="content">
+					<span class="span">Project:</span>
+					<input class="title project-name" name="project-title" type="text" readonly autocomplete="off"
+						autocapitalize="off" maxlength="50">
+				</div>
+				<div class="project-actions-btns">
+					<button class="btn editProject">Edit Project</button>
+					<button class="btn del deleteProject">Delete Project</button>
+					<button class="btn report reportProject">Report</button>
+				</div>
+			</div>
+			<form class="form task-form">
+				<input type="text" class="input task-input" name="task-input" autocomplete="off" autocapitalize="off"
+					maxlength="50">
+				<button class="btn submit" name="task-submit" type="submit">Add Task</button>
+			</form>
+			<div class="search_container">
+				<h2>Tasks</h2>
+				<div class="search">
+					<input type="search" class="search__input" name="Search" aria-label="search"
+						placeholder="Search for tasks.">
+					<svg>
+						<use href="#search_icon" />
+					</svg>
+				</div>
+			</div>
+			<div class="filter_container">
+				<span class="filter_lable">Tasks Filter</span>
+				<select class="task_filter" name="filter">
+					<option value="all">All</option>
+					<option value="started">Started</option>
+					<option value="notStarted">Not Started</option>
+					<option value="stopped">Stopped</option>
+					<option value="completed">Completed</option>
+				</select>
+			</div>
+			<div class="section tasks"></div>
+		</div>
+	</template>
+	<template id="tasks-temp">
+		<div class="task notStarted">
+			<div class="details">
+				<span class="taskStatus"></span>
+				<div class="content">
+					<span class="span">Task:</span>
+					<input class="title task-name" name="task-title" type="text" readonly autocomplete="off"
+						autocapitalize="off" maxlength="50">
+				</div>
+			</div>
+			<div class="counter">
+				<div class="time">00:00:00</div>
+				<div class="controls">
+					<button class="btn ctrl start">Start</button>
+					<button class="btn ctrl complete">Complete</button>
+					<button class="btn ctrl reset">Reset</button>
+					<button class="btn ctrl report">Report</button>
+				</div>
+			</div>
+			<div class="actions">
+				<button class="btn edit">Edit Task</button>
+				<button class="btn del delete">Delete Task</button>
+			</div>
+		</div>
+	</template>
+	<dialog id="alertDialog">
+		<div class="alertContainer">
+			<svg>
+				<use href="#warning" />
+			</svg>
+			<h2 id="alertTitle"></h2>
+		</div>
+		<button class="btn dialogBtn" id="closeModal">OK</button>
+	</dialog>
+	<dialog id="reportDialog">
+		<div class="reportBody">
+			<div class="reportHeader">
+				<h2 id="reportTitle"></h2>
+				<button class="dialogBtn" id="reportCloseModal">&times;</button>
+			</div>
+			<p class="reportInfo" id="reportInfo"></p>
+		</div>
+	</dialog>
+	<svg>
+		<symbol id="warning" viewBox="0 0 75 75" fill="none">
+			<path class="--1" d="M37.5 14v33" stroke="#e1c401" stroke-width="5" stroke-linecap="round" />
+			<circle class="--1" cx="37.5" cy="58" r="3" fill="#e1c401" />
+			<circle cx="37.5" cy="37.5" r="35" stroke="#e1c401" stroke-width="5" />
+		</symbol>
+		<symbol id="search_icon" viewBox="0 0 512 512">
+			<path
+				d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+		</symbol>
+	</svg>
+    <noscript>
+        <svg class="noScriptError" viewBox="0 0 16 16" fill="none">
+            <path class="noScript noScript1" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <path class="noScript noScript2" d="M3 8h10" stroke="#FF0000" stroke-linecap="round" />
+            <circle cx="8" cy="8" r="7.5" stroke="#ff0000" />
+        </svg>
+        <h1>Javascript must be enabled</h1>
+    </noscript>
+</body>
+
+</html>
